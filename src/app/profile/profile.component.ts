@@ -7,5 +7,5 @@ import { Component,Input } from '@angular/core';
   ]
 })
 export class ProfileComponent {
-  @ Input() user={name:"",bio:"",location:"",public_repos:0};
+  @ Input() user={name:"",bio:"",location:"",public_repos:0, avatar_url:"",followers:0,following:0};
 }
