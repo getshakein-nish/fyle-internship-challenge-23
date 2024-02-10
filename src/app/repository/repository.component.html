@@ -1,0 +1,11 @@
+<div class="repository w-96 max-w-md m-5 p-4 shadow-lg rounded-md bg-pink-300">
+    <h3 class="font-semibold text-slate-900"><span class="font-bold text-black">Repository Name: </span>{{repoData.name}}</h3>
+    <p class="font-normal text-slate-900"><span class="font-bold text-black">Description: </span>{{repoData.description}}</p>
+    <br>
+    <div class="topic-section flex flex-wrap">
+        <ul *ngFor="let topic of repoData.topics">
+            <app-topic [topicData]="topic"></app-topic>
+        </ul>
+    </div>
+
+</div>

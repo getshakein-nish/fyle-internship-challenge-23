@@ -1,0 +1,4 @@
+<div class="searchBar m-10">
+    <input type="text" #search name="search" placeholder="Enter Github Username" class="rounded-lg text-center p-2 max-w-xl shadow-md outline-none">
+    <button (click)="updateDataEvent.emit(search.value)" class="bg-black text-white w-20 m-4 p-2 font-semibold rounded-lg shadow-md" >Search</button>
+</div>

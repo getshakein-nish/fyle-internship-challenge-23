@@ -1,0 +1,24 @@
+<div class="repositoryList">
+    <div class="listHeading flex flex-col">
+        <div class="title font-bold text-3xl m-12 text-center">
+            Repository List
+        </div>
+
+        <div class="title font-bold text-md m-3 text-center">
+        <label for="numbers">No of Repositories per page: </label>
+        <select #numbers id="numbers" name="numbers" (change)="perPageRepoDataEvent.emit(numbers.value)">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+
+    </div>
+
+    <div class="list sm:grid sm:grid-cols-1 sm:gap-2 md:grid md:grid-cols-2 md:gap-3 xl:grid xl:grid-cols-3 xl:gap-4">
+        <div class="repos" *ngFor="let repo of repoList">
+            <app-repository [repoData]="repo" ></app-repository>
+        </div>
+    </div>
+</div>

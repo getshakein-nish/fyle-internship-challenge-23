@@ -1,5 +1,17 @@
-<div class="grid h-screen place-items-center">
-  <div class="font-bold text-3xl">
+<div class="grid place-items-center">
+  <div class="font-bold text-3xl m-4 text-blue-500">
     Fyle Internship Challenge
+  </div>
+
+  <app-search (updateDataEvent)="updateData($event)"></app-search>
+
+  <div class="item" >
+    <ngx-skeleton-loader count="500" appearance="line" *ngIf="loader && !show"></ngx-skeleton-loader>
+  </div>
+
+  <div *ngIf="show && !loader" class="grid place-items-center">
+    <app-profile [user]="user" ></app-profile>
+  <app-repository-list [repoList]="repos" (perPageRepoDataEvent)="perPageRepoData($event)"></app-repository-list>
+  <app-footer (getNextPageEvent)="getNextPage()" (getPrevPageEvent)="getPrevPage()" *ngIf="show"></app-footer>
   </div>
 </div>
